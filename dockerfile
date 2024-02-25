@@ -6,8 +6,8 @@ RUN apt update -y && \
     apt clean
 
 # Start Apache and enable it to start on boot
-RUN systemctl start apache2 && \
-    systemctl enable apache2
+RUN service apache2 start && \
+    service apache2 enable
 
 # Copy files into the web server's document root directory
 COPY . /var/www/html
